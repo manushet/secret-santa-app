@@ -32,7 +32,7 @@ class Request
 
     public function input(string $param): ?string
     {
-        return trim($this->body[$param]) ?? null;
+        return htmlspecialchars(trim($this->body[$param])) ?? null;
     }
 
     public function getMethod(): ?string
